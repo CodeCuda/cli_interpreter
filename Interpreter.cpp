@@ -1,7 +1,7 @@
 #include"Interpreter.h"
 #include <algorithm>
 
-
+/*We need map for modeling our finite automaton*/
 std::map<Input, Result> StatementsMap;
 
 
@@ -248,7 +248,8 @@ std::string Interpreter::Concat()
 	}
 }
 
-
+/*To parse our input string we use recursive parsing. It guarantees us operation precedence
+Every function (Add(), Sub() and etc.) is nonterminal symbol in used grammar*/
 void Interpreter::Parse() {
 	
 	auto token = GetToken();
