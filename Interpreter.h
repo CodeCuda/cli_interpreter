@@ -25,12 +25,8 @@ public:
 	Token(TokenType token_type, std::string token_value) : type(token_type), value(token_value) {};
 	~Token() {};
 	auto GetIntValue();
-	auto GetStringValue(){
-		return value;
-	}
-	auto GetType() const {
-		return type;
-	}
+	auto GetStringValue(){return value;}
+	auto GetType() {return type;}
 private:
 	TokenType type;
 	std::string value;
@@ -48,9 +44,9 @@ public:
 	int Mult();
 	int Sub();
 	std::string Concat();
-	
-	std::vector<Token> lexems;
-	std::string::iterator position;
+private:
+	std::vector<Token> lexems; /*this is the storage for tokens from lexical analysis*/
+	std::string::iterator position; 
 };
 
 
