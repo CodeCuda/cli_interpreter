@@ -37,11 +37,11 @@ void Interpreter::LexAnalysis(std::string input_string) {
 			exit(1);
 		}
 		
-		res = it->second; // Получаем пару (Новое Состояние & Выходной сигнал)
-		if (res.second == O11) std::cerr << "LEXICAL ERROR"; // Если выходной сиг-нал O11 - ошибка
-		if (res.first == S11 || next_iter == input_string.cend())//Если следующее состояние финальное или "виден" конец файла
+		res = it->second; 
+		if (res.second == O11) std::cerr << "LEXICAL ERROR"; 
+		if (res.first == S11 || next_iter == input_string.cend())
 		{
-			switch (res.second) //Выходной сигнал
+			switch (res.second) //Г‚Г»ГµГ®Г¤Г­Г®Г© Г±ГЁГЈГ­Г Г«
 			{
 			case O1:
 				if (value == "add")
@@ -268,7 +268,7 @@ void Interpreter::Parse() {
 
 void InitMap() {
 
-	// Заполнение таблицы 
+	// Г‡Г ГЇГ®Г«Г­ГҐГ­ГЁГҐ ГІГ ГЎГ«ГЁГ¶Г» 
 	//0 
 	for (auto i = 'A'; i != 'Z' + 1; ++i)
 		StatementsMap.insert(Item(Input(S0, i), Result(S1, O1)));
